@@ -10,5 +10,3 @@ require_once __DIR__.'/includes/database.php';
 require_once __DIR__.'/includes/utilities.php';
 
 require_once __DIR__.'/includes/router.php';
-
-var_dump(time());
