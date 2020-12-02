@@ -9,16 +9,19 @@
     <link rel="stylesheet" href="<?= $fileBase ?>/assets/bootstrap.min.css">
 </head>
 <body>
-<div class="container mt-5">
 
-    <a href="<?= $fileBase ?>home/" >&laquo; Startseite</a>
-    <hr>
-    <h3><?= $data['title'] ?></h3>
-    <small class="text-muted">Gepostet am <?= date('d.m.Y H:i', $data['posted']) ?></small>
-    <hr>
-    <?= $data['content'] ?>
+    <?php require_once ASSET_DIR.'/navigation.php'; ?>
 
-</div>
+    <div class="container mt-4">
+
+        <a href="<?= $fileBase ?>home/" >&laquo; Startseite</a>
+        <hr>
+        <h3><?= $data['title'] ?></h3>
+        <small class="text-muted">Gepostet am <?= date('d.m.Y H:i', $data['posted']) ?></small>
+        <hr>
+        <?= $data['content'] ?>
+
+    </div>
 
 </body>
 </html>

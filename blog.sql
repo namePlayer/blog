@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2020 at 05:24 PM
+-- Generation Time: Dec 02, 2020 at 05:35 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `blog`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accounts`
+--
+
+CREATE TABLE `accounts` (
+  `account_id` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL,
+  `firstname` text NOT NULL,
+  `lastname` text NOT NULL,
+  `twitter` text DEFAULT NULL,
+  `contact_email` text DEFAULT NULL,
+  `registered` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`account_id`, `email`, `password`, `firstname`, `lastname`, `twitter`, `contact_email`, `registered`) VALUES
+(1, 'robin@npcore.net', '$2y$10$/3hbxp9/30AP.XhKbIxOk.5ZGhqM8LRp2US3GZgoNrIXTzoN/mDgO', 'Robin', '', 'nameplayer1000', 'robin@npcore.net', 1606924666);
 
 -- --------------------------------------------------------
 
@@ -48,6 +72,12 @@ INSERT INTO `entrys` (`entry_id`, `title`, `content`, `slug`, `posted`) VALUES
 --
 
 --
+-- Indexes for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`account_id`);
+
+--
 -- Indexes for table `entrys`
 --
 ALTER TABLE `entrys`
@@ -56,6 +86,12 @@ ALTER TABLE `entrys`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `accounts`
+--
+ALTER TABLE `accounts`
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `entrys`

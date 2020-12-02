@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="<?= $fileBase ?>/assets/bootstrap.min.css">
 </head>
 <body>
+
+    <?php require_once ASSET_DIR.'/navigation.php'; ?>
+
     <div class="container mt-5">
 
         <?php

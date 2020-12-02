@@ -24,5 +24,12 @@ if(strpos($requestUrl, '/post') !== FALSE) {
         $requirePage = '404';
     }
 }
+if(strpos($requestUrl, '/bl-login') !== FALSE) {
+    $requirePage = 'login';
+}
+if(strpos($requestUrl, '/logout') !== FALSE) {
+    session_destroy();
+    header("Location: ".$fileBase.'bl-login/');
+}
 
 require_once ACTION_DIR.'/'.$requirePage.'.php';
